@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# initialize
+PRODUCT_ROOT="$(dirname $(dirname $(realpath -s $0)))"
+cd $PRODUCT_ROOT
+source config/productProperties.env
+
+# build docker image
+docker build -t "$PACKAGE_NAME:$PACKAGE_TAG" docker/

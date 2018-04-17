@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# initialize
+PRODUCT_ROOT="$(dirname $(dirname $(realpath -s $0)))"
+cd $PRODUCT_ROOT
+source config/productProperties.env
+
+# make sure the docker image exists
+# @todo
+
+# run the docker image
+docker run -it \
+  -v $HOME:/home/node \
+  -v $PRODUCT_ROOT:/usr/share/app \
+  $PACKAGE_NAME:$PACKAGE_TAG "$@"

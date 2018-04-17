@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# initialize
+PRODUCT_ROOT="$(dirname $(dirname $(realpath -s $0)))"
+cd $PRODUCT_ROOT
+
+bin/dockerExecute ionic "$@"
